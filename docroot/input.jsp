@@ -23,7 +23,7 @@
 %>
 
 <%
-// Below the descriptive area of the REPAST web form 
+// Below the descriptive area of the REPAST simulation web form 
 %>
 <table>
     <tr>
