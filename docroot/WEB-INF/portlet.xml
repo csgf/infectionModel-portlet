@@ -27,7 +27,7 @@
                 </init-param>
 		<init-param>
                         <name>gridOperationId</name>
-                        <value>9</value>
+                        <value>175</value>
                 </init-param>
                 <!--
                      Infrastructure parameters can be specified prefixing

@@ -167,6 +167,6 @@
 
         var jobIdentifier = document.getElementById('jobIdentifierId');
 
-        jobIdentifier.value += "Repast Simulation: " + currentTime.getDate() + "/" + (currentTime.getMonth() + 1) + "/" + currentTime.getFullYear() + " - " + currentTime.getHours() + ":" + currentTime.getMinutes() + ":" + currentTime.getSeconds();
+        jobIdentifier.value += "Repast Demo Simulation: " + currentTime.getDate() + "/" + (currentTime.getMonth() + 1) + "/" + currentTime.getFullYear() + " - " + currentTime.getHours() + ":" + currentTime.getMinutes() + ":" + currentTime.getSeconds();
     }
 </script>
