@@ -85,8 +85,17 @@
             </tr>
 
             <tr>
-                <td style="width: 30%"><b>Healthy Count</b></td>
-                <td colspan="2"><input type="text" id="inputValueId3" name="inputValue3" style="width: 100%" placeholder="Healthy Count ..."/></td>
+                <td style="width: 30%"><b>Recovered Count</b></td>
+            <td colspan="2">
+                <select id="healtyCount"style="width: 100%" onchange="setRecoveredCount()">
+                    <!-- CHANGE THE FOLLOWING VALUES -->
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                </select>
+                <input type="text" id="inputValueId3" name="inputValue3" hidden/>
+            </td>
             </tr>
 
             <tr>
@@ -107,8 +116,8 @@
             </tr>
             <tr>
                 <td><center><p><input type="button" value="DEMO" onClick="addDemo()" style="width: 30%"/></p></center></td>
-                <td><center><p><input type="button" value="SUBMIT" onClick="preSubmit()" style="width: 30%"/></p></center></td>
-                <td><center><p><input type="reset" value="RESET" style="width: 30%"/></p></center></td>
+            <td><center><p><input type="button" value="SUBMIT" onClick="preSubmit()" style="width: 30%"/></p></center></td>
+            <td><center><p><input type="reset" value="RESET" style="width: 30%"/></p></center></td>
             </tr>
         </table>
 
@@ -145,8 +154,7 @@
         if (missingFields === "") {
 //            alert("Ready to submit");
             document.forms[0].submit();
-        }
-        else {
+        } else {
             alert("You cannot send an inconsisten job submission!\nMissing fields:\n" + missingFields);
         }
     }
@@ -168,5 +176,10 @@
         var jobIdentifier = document.getElementById('jobIdentifierId');
 
         jobIdentifier.value += "Repast Demo Simulation: " + currentTime.getDate() + "/" + (currentTime.getMonth() + 1) + "/" + currentTime.getFullYear() + " - " + currentTime.getHours() + ":" + currentTime.getMinutes() + ":" + currentTime.getSeconds();
+    }
+    
+    function setRecoveredCount() {
+        var x = document.getElementById("healtyCount").value;
+        document.getElementById("inputValueId3").value = x;
     }
 </script>
