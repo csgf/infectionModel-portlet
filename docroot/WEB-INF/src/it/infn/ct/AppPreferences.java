@@ -28,13 +28,9 @@ import java.util.List;
 import java.util.ArrayList;
 
 // Import AppLogger
-import it.infn.ct.AppLogger;
 
 // Importing GridEngine Job libraries 
-import it.infn.ct.GridEngine.Job.*;
 import it.infn.ct.GridEngine.Job.InfrastructureInfo;
-import it.infn.ct.GridEngine.UsersTracking.UsersTrackingDBInterface;
-import it.infn.ct.GridEngine.Job.MultiInfrastructureJobSubmission;
 
 /** 
  * This object is used to store the values of portlet preferences
@@ -1136,6 +1132,63 @@ public class AppPreferences {
                                +LS+" JSAGA adaptor: '" + wmsHostList +"'"
                                  );
                 } 
+                else if(getAcronymInfrastructure(i).equalsIgnoreCase("rocci")) {
+                    // Multi-infrastructure support (field mapping)
+                    // ssh requires to specify:
+                    // * Username      -> bdiiHost first  field of the given ';' separated string
+                    // * Password      -> bdiiHost second field of the given ';' separated string
+                    // * JSAGA adaptor -> wmsHosts
+                    
+                    String OCCI_ENDPOINT_HOST = wmsHostList[0];
+                 
+//                    OCCI_ENDPOINT_PORT = "8787"; FOR FUTURE IMPROVMENT
+                    String OCCI_AUTH = "x509";
+                    
+                    // Possible RESOURCE values: 'os_tpl', 'resource_tpl', 'compute'
+                    String OCCI_RESOURCE = "compute";
+                    String OCCI_VM_TITLE = "RepastAnalysis";
+                    
+                    // Possible ACTION values: 'list', 'describe', 'create' and 'delete'
+                    String OCCI_ACTION = "create";
+                    
+                    String[] occiItems = getSoftwareTags(i).split(";");
+                    int occiItemscount = occiItems.length;
+                    
+                    String OCCI_OS = "";
+                    String OCCI_FLAVOR = "";
+                    
+                    if(occiItemscount>0) 
+                        OCCI_OS=occiItems[0].trim();
+                    if(occiItemscount>1) 
+                        OCCI_FLAVOR=occiItems[1].trim();
+                    
+                    String rOCCIURL = OCCI_ENDPOINT_HOST + "?" +
+//                                      OCCI_ENDPOINT_PORT +  
+                            "action=" + OCCI_ACTION + 
+                            "&resource=" + OCCI_RESOURCE +
+                            "&attributes_title=" + OCCI_VM_TITLE +
+                            "&mixin_os_tpl=" + OCCI_OS +
+                            "&mixin_resource_tpl=" + OCCI_FLAVOR +
+                            "&auth=" + OCCI_AUTH;
+		
+                    String rOCCIResourcesList[] = {rOCCIURL};
+                                        
+                    infrastructuresInfo[h++] = new InfrastructureInfo(
+                            getAcronymInfrastructure(i), 
+                            getBdiiHost(i), 
+                            rOCCIResourcesList, 
+                            getPxServerHost(i), 
+                            getPxServerPort(i), 
+                            getPxRobotId(i), 
+                            getPxRobotVO(i), 
+                            getPxRobotRole(i), 
+                            true
+                    );
+                    if(_log !=null)
+                        _log.info(LS+"*******************************"
+                                 +LS+"OCCI resource URL: " + rOCCIURL
+                                 +LS+"*******************************");
+                }
                 else {
                     // Multi-infrastructure support (no matching cases)
                     // If the acronym does not match to a specific infrastructure type

@@ -51,7 +51,7 @@
 		</init-param>
 		<init-param>    
 			<name>1_bdiiHost</name>
-			<value>jsaga;iA8KA2jfp4dGFlay</value>
+			<value>auser;apassword</value>
 		</init-param>
         	<init-param>
             		<name>1_enableInfrastructure</name>

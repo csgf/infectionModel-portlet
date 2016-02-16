@@ -23,10 +23,7 @@ limitations under the License.
 package it.infn.ct;
 
 // Importing GridEngine Job libraries 
-import it.infn.ct.GridEngine.Job.*;
 import it.infn.ct.GridEngine.Job.InfrastructureInfo;
-import it.infn.ct.GridEngine.UsersTracking.UsersTrackingDBInterface;
-import it.infn.ct.GridEngine.Job.MultiInfrastructureJobSubmission;
 
 /**
  * Infrastructure information class stores the required information
