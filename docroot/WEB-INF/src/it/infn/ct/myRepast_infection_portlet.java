@@ -1071,7 +1071,6 @@ public class myRepast_infection_portlet extends GenericPortlet {
         appInput.inputValue2    = (String) request.getParameter("inputValue2");
         appInput.inputValue3    = (String) request.getParameter("inputValue3");
         appInput.inputValue4    = (String) request.getParameter("inputValue4");
-        appInput.inputValue5    = (String) request.getParameter("inputValue5");
         appInput.jobIdentifier  = (String) request.getParameter("JobIdentifier");
         
         // Show into the log the taken inputs
@@ -1082,7 +1081,6 @@ public class myRepast_infection_portlet extends GenericPortlet {
                 + LS + "myValue2: '" + appInput.inputValue2 + "'"
                 + LS + "myValue3: '" + appInput.inputValue3 + "'"
                 + LS + "myValue4: '" + appInput.inputValue4 + "'"
-                + LS + "myValue5: '" + appInput.inputValue5 + "'"
                 + LS + "JobIdentifier: '" + appInput.jobIdentifier + "'"
                 + LS);
     } // getInputForm 
@@ -1415,8 +1413,7 @@ public class myRepast_infection_portlet extends GenericPortlet {
                 " " + appInput.inputValue +                  // Arguments
                 " " + appInput.inputValue2 +
                 " " + appInput.inputValue3 +
-                " " + appInput.inputValue4 +
-                " " + appInput.inputValue5; 
+                " " + appInput.inputValue4 ; 
         String outputPath="/tmp/";                         // Output Path
         String outputFile="myRepast-infection-Output.txt";           // Distributed application standard output
         String errorFile ="myRepast-infection-Error.txt";            // Distrubuted application standard error
