@@ -21,7 +21,7 @@ echo "---[Working directory]-------------------------"
 mkdir output
 ls -l $(pwd)
 
-/bin/bash $HOME/$SW_NAME/simulation.sh $1 $2 $3 $4 $5 > stdout
+/bin/bash $HOME/$SW_NAME/simulation.sh $1 $2 $3 $4 > stdout
 
 #
 # Following statement produce the simulation_output file

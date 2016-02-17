@@ -53,7 +53,7 @@
             Requested inputs are:
         </td>
     </tr>
-</table align="center">
+</table>
 <%
 // Below the application submission web form 
 //
@@ -65,125 +65,89 @@
 // the Enum type: Views. This value will be assigned calling the function: setRenderParameter
 //
 %>
-<center>
+<br />
+<br />
+    <center>
+        <form  action="<portlet:actionURL portletMode="view"><portlet:param name="PortletStatus" value="ACTION_SUBMIT"/></portlet:actionURL>" method="post">
+            <table>
+                <tr>
+                    <td style="width: 40%"><b>Select experiment</b></td>
+                    <td > 
+                        <select id="experiment" onchange="setSimulationValues()" style="width: 95%;float: right;" >
+                            <option value="-1">Please select an experiment ...</option>
+                            <option value="0">Experiment 1</option>
+                            <option value="1">Experiment 2</option>
+                            <option value="2">Experiment 3</option>
+                            <option value="3">Experiment 4</option>
+                            <option value="4">Experiment 5</option>                    
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><hr/></td>
+                <tr>
+                    <th colspan="2"><center>Simulation Parameters</center></th>
+                </tr>
 
-    <p><b>Simulation Parameters</b></p>
+                <tr>
+                    <td style="width: 40%"><b>Simulation Period (years)</b></td>
+                    <td id="simulationPeriodId" style="width: 60%"> 
+                        <input type="text" id="inputValueId" name="inputValue" readonly="true" style="width: 95%;float: right;"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 40%"><b>Recovered Count</b></td>
+                    <td id="recoveredCountId" style="width: 60%"> 
+                        <input type="text" id="inputValueId2" name="inputValue2" readonly="true" style="width: 95%;float: right;"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 40%"><b>Infected Count</b></td>
+                    <td  id="infectedCountId" style="width: 60%"> 
+                        <input type="text" id="inputValueId3" name="inputValue3" readonly="true" style="width: 95%;float: right;"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 40%"><b>Susceptible Count</b></td>
+                    <td id="susceptibleCountId" style="width: 60%"> 
+                        <input type="text" id="inputValueId4" name="inputValue4" readonly="true" style="width: 95%;float: right;"/>
+                    </td>
+                </tr>
+                <tr> 
+                    <td style="width: 40%"><b>Simulation identifier</b></td>
+                    <td><input type="text" id="jobIdentifierId" name="JobIdentifier" placeholder="Repast simulation..." style="width: 95%;float: right;" readonly="true"/></td>
+                </tr>
+                <tr>
+                    <td colspan="3"><hr/></td>
+                </tr>
+                <tr>
+                    <td style="width: 50%">
+                        <center>
+                            <input type="button" value="SUBMIT" onClick="preSubmit()" />
+                    </center>
+                    </td>
+                    <td colspan="2">
+                    <center>
+                        <input type="reset" value="RESET"/>
+                    </center>
+                    </td>
+                </tr>
+            </table>
 
-    <form  action="<portlet:actionURL portletMode="view"><portlet:param name="PortletStatus" value="ACTION_SUBMIT"/></portlet:actionURL>" method="post">
-
-        <table>
-            
-            <tr>
-                <td style="width: 30%"><b>Simulation Period (years)</b></td>
-            <td colspan="2">
-                <select id="simulationPeriod"style="width: 15%" onchange="setSimulationPeriod()">
-                  <option value="20">20</option>
-                </select>                
-                <select id="simulationPeriod"style="width: 15%" onchange="setSimulationPeriod()">
-                  <option value="20">20</option>
-                </select>
-                <select id="simulationPeriod"style="width: 15%" onchange="setSimulationPeriod()">
-                  <option value="20">20</option>
-                </select>
-                <select id="simulationPeriod"style="width: 15%" onchange="setSimulationPeriod()">
-                  <option value="20">20</option>
-                </select>
-                <select id="simulationPeriod"style="width: 15%" onchange="setSimulationPeriod()">
-                  <option value="20">20</option>
-                </select>
-                
-                <input type="text" id="inputValueId" name="inputValue" hidden/>
-            </td>
-            </tr>
-            
-           
-            <tr>
-                <td style="width: 30%"><b>Recovered Count</b></td>
-            <td colspan="2">
-                <select id="recoveredCount"style="width: 15%" onchange="setRecoveredCount()">
-                    <option value="0">0</option>
-                </select>
-                <select id="recoveredCount"style="width: 15%" onchange="setRecoveredCount()">
-                    <option value="0">0</option>
-                </select>
-                <select id="recoveredCount"style="width: 15%" onchange="setRecoveredCount()">
-                    <option value="0">0</option>
-                </select>
-                <select id="recoveredCount"style="width: 15%" onchange="setRecoveredCount()">
-                    <option value="0">0</option>
-                </select>
-                <select id="recoveredCount"style="width: 15%" onchange="setRecoveredCount()">
-                    <option value="0">0</option>
-                </select>
-                
-                <input type="text" id="inputValueId2" name="inputValue2" hidden/>
-            </td>
-            </tr>
-            
-            <tr>
-                <td style="width: 30%"><b>Infected Count</b></td>
-            <td colspan="2">
-                <select id="infectedCount"style="width: 15%" onchange="setInfectedCount()">
-                    <option value="20">20</option>
-                </select>
-                <select id="infectedCount"style="width: 15%" onchange="setInfectedCount()">
-                    <option value="20">20</option>
-                </select>
-                <select id="infectedCount"style="width: 15%" onchange="setInfectedCount()">
-                    <option value="10">10</option>
-                </select>
-                <select id="infectedCount"style="width: 15%" onchange="setInfectedCount()">
-                    <option value="10">10</option>
-                </select>
-                <select id="infectedCount"style="width: 15%" onchange="setInfectedCount()">
-                    <option value="10">10</option>
-                </select>
-               
-                <input type="text" id="inputValueId3" name="inputValue3" hidden/>
-            </td>
-            </tr>
-            
-            <tr>
-                <td style="width: 30%"><b>Susceptible Count</b></td>
-            <td colspan="2">
-                <select id="susceptibleCount"style="width: 15%" onchange="setSusceptibleCount()">
-                    <option value="1500">1500</option>
-                </select>
-                <select id="susceptibleCount"style="width: 15%" onchange="setSusceptibleCount()">
-                    <option value="2000">2000</option>
-                </select>
-                <select id="susceptibleCount"style="width: 15%" onchange="setSusceptibleCount()">
-                    <option value="1500">1500</option>
-                </select>
-                <select id="susceptibleCount"style="width: 15%" onchange="setSusceptibleCount()">
-                    <option value="2000">2000</option>
-                </select>
-                <select id="susceptibleCount"style="width: 15%" onchange="setSusceptibleCount()">
-                    <option value="3000">3000</option>
-                </select>
-                
-                <input type="text" id="inputValueId4" name="inputValue4" hidden/>
-            </td>
-            </tr>
-  
-            <tr> 
-                <td style="width: 30%"><b>Simulation identifier</b></td>
-                <td colspan="2"><input type="text" id="jobIdentifierId" name="JobIdentifier" placeholder="Repast simulation..." onClick="disableField()" style="width: 77%"/></td>
-            </tr>
-            <tr>
-                <td colspan="3"><hr/></td>
-            </tr>
-            <tr>
-               
-                <td><center><p><input type="button" value="SUBMIT" onClick="preSubmit()" style="width: 40%"/></p></center></td>
-                <td><center><p><input type="reset" value="RESET" style="width: 20%"/></p></center></td>
-            </tr>
-        </table>
-
-    </form>
-</center>
-
+        </form>
+    </center>
+    
 <script type="text/javascript">
+
+    var experiments = [
+        {"simulationPeriod": 20, "recoveredCount": 0, "infectedCount": 20, "susceptibleCount": 1500},
+        {"simulationPeriod": 20, "recoveredCount": 0, "infectedCount": 20, "susceptibleCount": 2000},
+        {"simulationPeriod": 20, "recoveredCount": 0, "infectedCount": 10, "susceptibleCount": 1500},
+        {"simulationPeriod": 20, "recoveredCount": 0, "infectedCount": 10, "susceptibleCount": 2000},
+        {"simulationPeriod": 20, "recoveredCount": 0, "infectedCount": 10, "susceptibleCount": 3000}
+
+    ];
+
     function preSubmit() {
         var jobIdentifier = document.getElementById('jobIdentifierId');
         var state_jobIdentifier = false;
@@ -210,40 +174,52 @@
         if (missingFields === "") {
 //            alert("Ready to submit");
             document.forms[0].submit();
-        }
-        else {
-            alert("You cannot send an inconsistent job submission!\nMissing fields:\n" + missingFields);
+        } else {
+            alert("You cannot send an inconsistent job submission!\n\nPlease select an experiment.");
         }
     }
 
-    
-        function setSimulationPeriod() {
+    function setSimulationValues() {
+        var x = document.getElementById("experiment").value;
+        var experimentDropDown = document.getElementById("experiment");
+
+//        document.getElementById("simulationPeriodId").innerHTML = experiments[x].simulationPeriod;
+
+        if (x !== "-1") {
+            document.getElementById("inputValueId").value = experiments[x].simulationPeriod;
+            document.getElementById("inputValueId2").value = experiments[x].recoveredCount;
+            document.getElementById("inputValueId3").value = experiments[x].infectedCount;
+            document.getElementById("inputValueId4").value = experiments[x].susceptibleCount;
+
+            var currentTime = new Date();
+
+            var jobIdentifier = document.getElementById('jobIdentifierId');
+            jobIdentifier.value = experimentDropDown.options[experimentDropDown.selectedIndex].innerHTML;
+            jobIdentifier.value += " " + currentTime.getDate() + "/" + (currentTime.getMonth() + 1) + "/" + currentTime.getFullYear() + " - " + currentTime.getHours() + ":" + currentTime.getMinutes() + ":" + currentTime.getSeconds();
+        } else {
+            alert("Please select a valid experiment.");
+        }
+    }
+
+    function setSimulationPeriod() {
         var x = document.getElementById("simulationPeriod").value;
         document.getElementById("inputValueId").value = x;
     }
-    
-        function setRecoveredCount() {
+
+    function setRecoveredCount() {
         var x = document.getElementById("recoveredCount").value;
         document.getElementById("inputValueId2").value = x;
     }
-    
-        function setInfectedCount() {
+
+    function setInfectedCount() {
         var x = document.getElementById("infectedCount").value;
         document.getElementById("inputValueId3").value = x;
     }
-    
-        function setSusceptibleCount() {
+
+    function setSusceptibleCount() {
         var x = document.getElementById("susceptibleCount").value;
         document.getElementById("inputValueId4").value = x;
     }
-    
-    function disableField() {
-        
-        var jobIdentifier = document.getElementById('jobIdentifierId');
-        
-        document.getElementById("jobIdentifierId").disabled = true;
-        
-        jobIdentifier.value += "Repast Demo Simulation: " + currentTime.getDate() + "/" + (currentTime.getMonth() + 1) + "/" + currentTime.getFullYear() + " - " + currentTime.getHours() + ":" + currentTime.getMinutes() + ":" + currentTime.getSeconds();
-}
-    
+
+
 </script>
