@@ -31,24 +31,42 @@
             <img align="left" style="padding:10px 10px;" src="<%=renderRequest.getContextPath()%>/images/Repast_logo_100h.png" />
         </td>
         <td>
-            This is an example of an <b>Agent-Based Simulation Infection Model</b> implemented in <b>Repast Simphony</b>. The aim of the model is to study the behaviour of infections with an annual outbreak
-            with the appropriate input data. it can be further used in the field of health economics
-            to study the cost effectiveness of various infection preventive strategies.
-
+            The aim of this demonstration model is to show how a science gateway could support the study of the spread of disease or infections in a population.
+            The <b>Repast-infection-model</b> is implemented in <b>Repast Simphony</b>. The aim of this example model is to study the behaviour of infections 
+            with an annual outbreak according to several input parameters. The parameters are:
             <ul>
-
-                <li>Use the <b>Simulation Period</b> input field to specify how many years the simulation will run for.</li>
-                <li>Use the <b>Recovered Count</b> input field to specify the initial healthy population. Healthy population have immunity and cannot be infected immediately. However, after a number of contacts with infected population,
-                    they lose their immunity and become susceptible to infection.</li>
-
-                <li>Use the <b>infected count</b> input field to specify the initial infected population. Infected population can infect susceptible population upon contacting them. They recover after a period of time and become healthy.</li>
-
-                <li>Use the <b>Susceptible Count</b> input field for the initial susceptible population. Susceptible population can be infected when contacted by infected population. If more than one susceptible agent are in the proximity of an infected agent, 
-                    only one will be infected.</li>
-
-                <li>The output of the simulation is the number of each population, i.e <b>Recovered</b>, <b>Infected</b> and <b>Susceptible</b> population for each simulation time unit.</li>
-
+                <li><b>Simulation Period</b> - specifies how many years the simulation will run for.</li>
+                <li><b>Recovered Count</b> - specifies the initial healthy population. Healthy population have immunity and cannot be infected immediately. 
+                    However, after a number of contacts with infected population, they lose their immunity and become susceptible to infection.</li>
+                <li><b>Infected Count</b> - specifies the initial infected population. Infected population can infect susceptible population upon contacting them. 
+                    They recover after a period of time and become healthy.</li>
+                <li><b>Susceptible Count</b> - specifies initial susceptible population. Susceptible population can be infected when contacted by infected 
+                    population. We assume that if more than one susceptible agent is in the proximity of an infected agent, only one will be infected.</li>
             </ul>
+            The output of the simulation is the amount of each population (Recovered, Infected and Susceptible) over time.
+        </td>
+    </tr>
+    <tr>
+        <td/>
+        <td><br/>
+            <p><a href="#" id="showHelpId" onclick="showHelp()" >Show</a> help in how to use Infection Model.</p>
+            <div style="display:none" id="show_help" ><b>How to use the Infection Model</b>
+                <ol>
+                    <li>Select an experiment to run from the drop down box (in a full application users would be able to enter their own parameters).</li>
+                    <li>Note the Simulation Identifier. You will need this to identify the results from the experiment that you are about to run.</li>
+                    <li> Press <b>Submit</b>. This will submit the experiment to the computers of the e-Infrastructure that you are using.</li>
+                    <li>Go to <b>MyWorkSpace</b> (menu bar above).  Select <b>MyJobs</b>. Your current experiments will be listed here.  
+                        When the job is complete then you can download by clicking on the icon on the right of the job. </li>
+                    <li>Unzip your results file. The download is in tgz zipped format. Use a tool like 7-zip (<a href="http://www.7-zip.com">www.7-zip.com</a>) to unzip the file.</li>
+                    <li>Each results file will contact <b>output.txt</b>. This contains how each population varies over time. 
+                        To visualise it, select <b>Visualise</b> from the left hand side menu and upload the text file to produce a graph of population variance over time.</li>
+                </ol>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td/>
+        <td>
             Please fill the following form and then press the <b>'SUBMIT'</b> button to launch this application.<br>
             Requested inputs are:
         </td>
@@ -67,76 +85,76 @@
 %>
 <br />
 <br />
-    <center>
-        <form  action="<portlet:actionURL portletMode="view"><portlet:param name="PortletStatus" value="ACTION_SUBMIT"/></portlet:actionURL>" method="post">
-            <table>
-                <tr>
-                    <td style="width: 40%"><b>Select experiment</b></td>
-                    <td > 
-                        <select id="experiment" onchange="setSimulationValues()" style="width: 95%;float: right;" >
-                            <option value="-1">Please select an experiment ...</option>
-                            <option value="0">Experiment 1</option>
-                            <option value="1">Experiment 2</option>
-                            <option value="2">Experiment 3</option>
-                            <option value="3">Experiment 4</option>
-                            <option value="4">Experiment 5</option>                    
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2"><hr/></td>
-                <tr>
-                    <th colspan="2"><center>Simulation Parameters</center></th>
-                </tr>
+<center>
+    <form  action="<portlet:actionURL portletMode="view"><portlet:param name="PortletStatus" value="ACTION_SUBMIT"/></portlet:actionURL>" method="post">
+        <table>
+            <tr>
+                <td style="width: 40%"><b>Select experiment</b></td>
+                <td > 
+                    <select id="experiment" onchange="setSimulationValues()" style="width: 95%;float: right;" >
+                        <option value="-1">Please select an experiment ...</option>
+                        <option value="0">Experiment 1</option>
+                        <option value="1">Experiment 2</option>
+                        <option value="2">Experiment 3</option>
+                        <option value="3">Experiment 4</option>
+                        <option value="4">Experiment 5</option>                    
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><hr/></td>
+            <tr>
+                <th colspan="2"><center>Simulation Parameters</center></th>
+            </tr>
 
-                <tr>
-                    <td style="width: 40%"><b>Simulation Period (years)</b></td>
-                    <td id="simulationPeriodId" style="width: 60%"> 
-                        <input type="text" id="inputValueId" name="inputValue" readonly="true" style="width: 95%;float: right;"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="width: 40%"><b>Recovered Count</b></td>
-                    <td id="recoveredCountId" style="width: 60%"> 
-                        <input type="text" id="inputValueId2" name="inputValue2" readonly="true" style="width: 95%;float: right;"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="width: 40%"><b>Infected Count</b></td>
-                    <td  id="infectedCountId" style="width: 60%"> 
-                        <input type="text" id="inputValueId3" name="inputValue3" readonly="true" style="width: 95%;float: right;"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="width: 40%"><b>Susceptible Count</b></td>
-                    <td id="susceptibleCountId" style="width: 60%"> 
-                        <input type="text" id="inputValueId4" name="inputValue4" readonly="true" style="width: 95%;float: right;"/>
-                    </td>
-                </tr>
-                <tr> 
-                    <td style="width: 40%"><b>Simulation identifier</b></td>
-                    <td><input type="text" id="jobIdentifierId" name="JobIdentifier" placeholder="Repast simulation..." style="width: 95%;float: right;" readonly="true"/></td>
-                </tr>
-                <tr>
-                    <td colspan="3"><hr/></td>
-                </tr>
-                <tr>
-                    <td style="width: 50%">
-                        <center>
-                            <input type="button" value="SUBMIT" onClick="preSubmit()" />
-                    </center>
-                    </td>
-                    <td colspan="2">
-                    <center>
-                        <input type="reset" value="RESET"/>
-                    </center>
-                    </td>
-                </tr>
-            </table>
+            <tr>
+                <td style="width: 40%"><b>Simulation Period (years)</b></td>
+                <td id="simulationPeriodId" style="width: 60%"> 
+                    <input type="text" id="inputValueId" name="inputValue" readonly="true" style="width: 95%;float: right;"/>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 40%"><b>Recovered Count</b></td>
+                <td id="recoveredCountId" style="width: 60%"> 
+                    <input type="text" id="inputValueId2" name="inputValue2" readonly="true" style="width: 95%;float: right;"/>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 40%"><b>Infected Count</b></td>
+                <td  id="infectedCountId" style="width: 60%"> 
+                    <input type="text" id="inputValueId3" name="inputValue3" readonly="true" style="width: 95%;float: right;"/>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 40%"><b>Susceptible Count</b></td>
+                <td id="susceptibleCountId" style="width: 60%"> 
+                    <input type="text" id="inputValueId4" name="inputValue4" readonly="true" style="width: 95%;float: right;"/>
+                </td>
+            </tr>
+            <tr> 
+                <td style="width: 40%"><b>Simulation identifier</b></td>
+                <td><input type="text" id="jobIdentifierId" name="JobIdentifier" placeholder="Repast simulation..." style="width: 95%;float: right;" readonly="true"/></td>
+            </tr>
+            <tr>
+                <td colspan="3"><hr/></td>
+            </tr>
+            <tr>
+                <td style="width: 50%">
+            <center>
+                <input type="button" value="SUBMIT" onClick="preSubmit()" />
+            </center>
+            </td>
+            <td colspan="2">
+            <center>
+                <input type="reset" value="RESET"/>
+            </center>
+            </td>
+            </tr>
+        </table>
 
-        </form>
-    </center>
-    
+    </form>
+</center>
+
 <script type="text/javascript">
 
     var experiments = [
@@ -222,4 +240,14 @@
     }
 
 
+    function showHelp()
+    {
+        if (document.getElementById("show_help").style.display === "none") {
+            document.getElementById("showHelpId").innerHTML = "Hide";
+            document.getElementById("show_help").style.display = "block";
+        } else {
+            document.getElementById("showHelpId").innerHTML = "Show";
+            document.getElementById("show_help").style.display = "none";
+        }
+    }
 </script>
