@@ -30,10 +30,15 @@
         <td valign="top">
             <img align="left" style="padding:10px 10px;" src="<%=renderRequest.getContextPath()%>/images/Repast_logo_100h.png" />
         </td>
-        <td>
+        <td  align="justify">
             The aim of this demonstration model is to show how a science gateway could support the study of the spread of disease or infections in a population.
             The <b>Repast-infection-model</b> is implemented in <b>Repast Simphony</b>. The aim of this example model is to study the behaviour of infections 
-            with an annual outbreak according to several input parameters. The parameters are:
+            with an annual outbreak according to several input parameters. 
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2"  align="justify">
+            The parameters are:
             <ul>
                 <li><b>Simulation Period</b> - specifies how many years the simulation will run for.</li>
                 <li><b>Recovered Count</b> - specifies the initial healthy population. Healthy population have immunity and cannot be infected immediately. 
@@ -46,10 +51,9 @@
             The output of the simulation is the amount of each population (Recovered, Infected and Susceptible) over time.
         </td>
     </tr>
-    <tr>
-        <td/>
-        <td><br/>
-            <p><a href="#" id="showHelpId" onclick="showHelp()" >Show</a> help in how to use Infection Model.</p>
+    <tr>        
+        <td colspan="2" align="justify"><br/>
+            <p id="helpId">Click to <input type="button" id="showHelpId" onclick="showHelp()" value="show" /> details in how to use Infection Model.</p>
             <div style="display:none" id="show_help" ><b>How to use the Infection Model</b>
                 <ol>
                     <li>Select an experiment to run from the drop down box (in a full application users would be able to enter their own parameters).</li>
@@ -65,8 +69,7 @@
         </td>
     </tr>
     <tr>
-        <td/>
-        <td>
+        <td colspan="2"  align="justify">
             Please fill the following form and then press the <b>'SUBMIT'</b> button to launch this application.<br>
             Requested inputs are:
         </td>
@@ -243,10 +246,10 @@
     function showHelp()
     {
         if (document.getElementById("show_help").style.display === "none") {
-            document.getElementById("showHelpId").innerHTML = "Hide";
+            document.getElementById("showHelpId").value = "hide";
             document.getElementById("show_help").style.display = "block";
         } else {
-            document.getElementById("showHelpId").innerHTML = "Show";
+            document.getElementById("showHelpId").value = "show";
             document.getElementById("show_help").style.display = "none";
         }
     }
