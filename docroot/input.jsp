@@ -53,19 +53,17 @@
     </tr>
     <tr>        
         <td colspan="2" align="justify"><br/>
-            <p id="helpId">Click to <input type="button" id="showHelpId" onclick="showHelp()" value="show" /> details in how to use Infection Model.</p>
-            <div style="display:none" id="show_help" ><b>How to use the Infection Model</b>
-                <ol>
-                    <li>Select an experiment to run from the drop down box (in a full application users would be able to enter their own parameters).</li>
-                    <li>Note the Simulation Identifier. You will need this to identify the results from the experiment that you are about to run.</li>
-                    <li> Press <b>Submit</b>. This will submit the experiment to the computers of the e-Infrastructure that you are using.</li>
-                    <li>Go to <b>MyWorkSpace</b> (menu bar above).  Select <b>MyJobs</b>. Your current experiments will be listed here.  
-                        When the job is complete then you can download by clicking on the icon on the right of the job. </li>
-                    <li>Unzip your results file. The download is in tgz zipped format. Use a tool like 7-zip (<a href="http://www.7-zip.com">www.7-zip.com</a>) to unzip the file.</li>
-                    <li>Each results file will contact <b>output.txt</b>. This contains how each population varies over time. 
-                        To visualise it, select <b>Visualise</b> from the left hand side menu and upload the text file to produce a graph of population variance over time.</li>
-                </ol>
-            </div>
+            <b>How to use the Infection Model</b>
+            <ol>
+                <li>Select an experiment to run from the drop down box (in a full application users would be able to enter their own parameters).</li>
+                <li>Note the Simulation Identifier. You will need this to identify the results from the experiment that you are about to run.</li>
+                <li> Press <b>Submit</b>. This will submit the experiment to the computers of the e-Infrastructure that you are using.</li>
+                <li>Go to <b>MyWorkSpace</b> (menu bar above).  Select <b>MyJobs</b>. Your current experiments will be listed here.  
+                    When the job is complete then you can download by clicking on the icon on the right of the job. </li>
+                <li>Unzip your results file. The download is in tgz zipped format. Use a tool like 7-zip (<a href="http://www.7-zip.com">www.7-zip.com</a>) to unzip the file.</li>
+                <li>Each results file will contact <b>output{timestamp}.txt</b>. This contains how each population varies over time. 
+                    To visualise it, select <b>Visualise</b> from the left hand side menu and upload the text file to produce a graph of population variance over time.</li>
+            </ol>
         </td>
     </tr>
     <tr>
@@ -240,17 +238,5 @@
     function setSusceptibleCount() {
         var x = document.getElementById("susceptibleCount").value;
         document.getElementById("inputValueId4").value = x;
-    }
-
-
-    function showHelp()
-    {
-        if (document.getElementById("show_help").style.display === "none") {
-            document.getElementById("showHelpId").value = "hide";
-            document.getElementById("show_help").style.display = "block";
-        } else {
-            document.getElementById("showHelpId").value = "show";
-            document.getElementById("show_help").style.display = "none";
-        }
     }
 </script>
