@@ -1156,11 +1156,14 @@ public class AppPreferences {
                     
                     String OCCI_OS = "";
                     String OCCI_FLAVOR = "";
+                    String OCCI_LINK = "";
                     
                     if(occiItemscount>0) 
                         OCCI_OS=occiItems[0].trim();
                     if(occiItemscount>1) 
                         OCCI_FLAVOR=occiItems[1].trim();
+                    if(occiItemscount>2) 
+                        OCCI_LINK=occiItems[2].trim();
                     
                     String rOCCIURL = OCCI_ENDPOINT_HOST + "?" +
 //                                      OCCI_ENDPOINT_PORT +  
@@ -1169,7 +1172,8 @@ public class AppPreferences {
                             "&attributes_title=" + OCCI_VM_TITLE +
                             "&mixin_os_tpl=" + OCCI_OS +
                             "&mixin_resource_tpl=" + OCCI_FLAVOR +
-                            "&auth=" + OCCI_AUTH;
+                            "&auth=" + OCCI_AUTH +
+                            "&link=" + OCCI_LINK;
 		
                     String rOCCIResourcesList[] = {rOCCIURL};
                                         
