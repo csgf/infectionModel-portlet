@@ -61,7 +61,7 @@
                 <li>Go to <b>MyWorkSpace</b> (menu bar above).  Select <b>MyJobs</b>. Your current experiments will be listed here.  
                     When the job is complete then you can download by clicking on the icon on the right of the job. </li>
                 <li>Unzip your results file. The download is in tgz zipped format. Use a tool like 7-zip (<a href="http://www.7-zip.com">www.7-zip.com</a>) to unzip the file.</li>
-                <li>Each results file will contact <b>output{timestamp}.txt</b>. This contains how each population varies over time. 
+                <li>Each results file will contact <b>output{timestamp}.csv</b>. This contains how each population varies over time. 
                     To visualise it, select <b>Visualise</b> from the left hand side menu and upload the text file to produce a graph of population variance over time.</li>
             </ol>
         </td>
