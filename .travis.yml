@@ -47,7 +47,7 @@ before_install:
 
 # Building the infection-model-portlet
 install:
- - cd liferay-plugins-sdk-6.1.1/portlets/infection-model-portlet
+ - cd liferay-plugins-sdk-6.1.1/portlets/${PORTLET}
  - sudo ant all
 
 notifications:
