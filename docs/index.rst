@@ -15,7 +15,7 @@ About
 
 The infection model is an example of an Agent-Based Simulation Infection
 Model implemented in the well-known **Repast Simphony**
-(`repast.sourceforge.net<http://repast.sourceforge.net/>`_) agent-based simulation toolkit. Agent-based
+(`repast.sourceforge.net <http://repast.sourceforge.net/>`_) agent-based simulation toolkit. Agent-based
 simulation is a highly useful technique that allows individuals and their
 behaviours to be represented as they interact over time.  This means, with
 appropriate data, agent-based simulation can be used to study various
