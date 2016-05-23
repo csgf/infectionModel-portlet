@@ -14,8 +14,8 @@ About
    :alt: infectionModel-portlet logo
 
 The infection model is an example of an Agent-Based Simulation Infection
-Model implemented in the well-known **`Repast Simphony
-<http://repast.sourceforge.net/>`_** agent-based simulation toolkit. Agent-based
+Model implemented in the well-known **Repast Simphony**
+(`repast.sourceforge.net<http://repast.sourceforge.net/>`_) agent-based simulation toolkit. Agent-based
 simulation is a highly useful technique that allows individuals and their
 behaviours to be represented as they interact over time.  This means, with
 appropriate data, agent-based simulation can be used to study various
@@ -37,10 +37,11 @@ graph tool that allows users to see the graphical visualisation of the results.
 This shows that science gateways can be developed to support online complex
 simulations in an extremely easy to use manner.  See the `Sci-GaIA project
 <http://www.sci-gaia.eu>`_ web pages and the `educational modules
-<http://courses.sci-gaia.eu/>`_ to get information on
-how to implement these applications as well as how science gateways and data
-repositories can be used to support Open Science.
+<http://courses.sci-gaia.eu/>`_ to get information on how to implement these
+applications as well as how science gateways and data repositories can be used
+to support Open Science.
 
+============
 Installation
 ============
 
@@ -121,11 +122,27 @@ shown below.
 Usage
 ============
 
+The infectionModel-portlet, has been developed in the contest of the Sci-GaIA
+project, and it is curretly available on the `Africa Grid Science Gateway
+<https://sgw.africa-grid.org/repast>`_. You can read more information in how to
+use this application, after sign in, on its dedicated `run page <https://sgw.africa-grid.org/run-repast>`_.
 
-============
+As soon as your submitted interaction complete its execution you can exploit the
+`Visualize infection Model result <https://sgw.africa-grid.org/visualize-infection-model-result>`_
+portlet, to see the simulation outputs in a graphical way, like shown in the
+picture below.
+
+.. image:: images/view-result.png
+   :align: center
+   :scale: 70%
+   :alt: infectionModel-portlet preference
+
+==============
 Contributor(s)
-============
-Please feel free to contact us any time if you have any questions or comments.
+==============
+
+If you have any questions or comments, please feel free to contact us using the
+Sci-GaIA project dicussion forum (`discourse.sci-gaia.eu <discourse.sci-gaia.eu>`_)
 
 .. _BRUNEL: http://www.brunel.ac.uk/
 .. _DFA: http://www.dfa.unict.it/
@@ -133,8 +150,8 @@ Please feel free to contact us any time if you have any questions or comments.
 :Authors:
  Roberto BARBERA - University of Catania (DFA_),
 
- Adedeji FABIYI  - Brunel University Londo (BRUNEL_),
+ Adedeji FABIYI  - Brunel University London (BRUNEL_),
 
- Simon TAYLOR    - Brunel University Londo (BRUNEL_)
+ Simon TAYLOR    - Brunel University London (BRUNEL_),
 
- Mario TORRISI   - University of Catania (DFA_),
+ Mario TORRISI   - University of Catania (DFA_)
