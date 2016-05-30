@@ -134,7 +134,7 @@ picture below.
 
 When an authorised user successfully log on, they are presented with the portlet, i.e the infection model portlet, where they can
 specify all the necessary input parameters of the infection model. After a user has finished specifying the parameters and
-clicked on the submit button, the jobs can then be submitted to the different Distributed Computing Infrastructures. After submitting a job, users would be notified that their jobs have been successfully submitted and then advised to check the MyJobs portlet, a dedicated portlet where the status of all running jobs can be found. A done job status would be represented by a small folder icon and users can download the output of the infection model for analysis.
+clicked on the submit button, the jobs can then be submitted to the different Distributed Computing Infrastructures. However, due to limitation of resources, this portlet presents a verson where a number of experiments have been fixed and users can only choose from within a predefined set of expereiments.  After submitting a job, users would be notified that their jobs have been successfully submitted and then advised to check the MyJobs portlet, a dedicated portlet where the status of all running jobs can be found. A done job status would be represented by a small folder icon and users can download the output of the infection model for analysis.
 
 .. image:: images/view-result.png
    :align: center
