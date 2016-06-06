@@ -124,13 +124,19 @@ Usage
 
 The infectionModel-portlet, has been developed in the contest of the Sci-GaIA
 project, and it is curretly available on the `Africa Grid Science Gateway
-<https://sgw.africa-grid.org/repast>`_. You can read more information in how to
+<https://sgw.africa-grid.org/repast>`_. You can read more information on how to
 use this application, after sign in, on its dedicated `run page <https://sgw.africa-grid.org/run-repast>`_.
 
 As soon as your submitted interaction complete its execution you can exploit the
 `Visualize infection Model result <https://sgw.africa-grid.org/visualize-infection-model-result>`_
 portlet, to see the simulation outputs in a graphical way, like shown in the
 picture below.
+
+When an authorised user successfully log on, they are presented with the portlet, i.e the infection model portlet, where they can
+specify all the necessary input parameters of the infection model. After a user has finished specifying the parameters and
+clicked on the submit button, the jobs can then be submitted to the different Distributed Computing Infrastructures. However, due to limitation of resources, this portlet presents a verson where a number of experiments have been fixed and users can only choose from within a predefined set of expereiments.  After submitting a job, users would be notified that their jobs have been successfully submitted and then advised to check the MyJobs portlet, a dedicated portlet where the status of all running jobs can be found. A done job status would be represented by a small folder icon and users can download the output of the infection model for analysis. 
+
+The analysis of the infection model result output file, using the visualize portlet, can be seen below:
 
 .. image:: images/view-result.png
    :align: center
